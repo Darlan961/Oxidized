@@ -1,0 +1,69 @@
+# Config Pollers
+
+$config['fping_options']['timeout'] = 300;
+$config['fping_options']['count']   = 1;
+$config['fping_options']['interval'] = 300;
+
+$config['poller_modules']['unix-agent']                  = false;
+$config['poller_modules']['os']                          = true;
+$config['poller_modules']['ipmi']                        = false;
+$config['poller_modules']['sensors']                     = true;
+$config['poller_modules']['processors']                  = true;
+$config['poller_modules']['mempools']                    = true;
+$config['poller_modules']['storage']                     = false;
+$config['poller_modules']['netstats']                    = false;
+$config['poller_modules']['hr-mib']                      = false;
+$config['poller_modules']['ucd-mib']                     = false;
+$config['poller_modules']['ipSystemStats']               = false;
+$config['poller_modules']['ports']                       = true;
+$config['poller_modules']['nac']                         = false;
+$config['poller_modules']['bgp-peers']                   = true;
+$config['poller_modules']['junose-atm-vp']               = false;
+$config['poller_modules']['toner']                       = false;
+$config['poller_modules']['ucd-diskio']                  = false;
+$config['poller_modules']['wireless']                    = false;
+$config['poller_modules']['ospf']                        = false;
+$config['poller_modules']['cisco-ipsec-flow-monitor']    = false;
+$config['poller_modules']['cisco-remote-access-monitor'] = false;
+$config['poller_modules']['cisco-cef']                   = false;
+$config['poller_modules']['cisco-sla']                   = false;
+$config['poller_modules']['cisco-mac-accounting']        = false;
+$config['poller_modules']['cipsec-tunnels']              = false;
+$config['poller_modules']['cisco-ace-loadbalancer']      = false;
+$config['poller_modules']['cisco-ace-serverfarms']       = false;
+$config['poller_modules']['cisco-asa-firewall']          = false;
+$config['poller_modules']['cisco-voice']                 = false;
+$config['poller_modules']['cisco-cbqos']                 = false;
+$config['poller_modules']['cisco-otv']                   = false;
+$config['poller_modules']['cisco-vpdn']                  = false;
+$config['poller_modules']['netscaler-vsvr']              = false;
+$config['poller_modules']['aruba-controller']            = false;
+$config['poller_modules']['entity-physical']             = false;
+$config['poller_modules']['entity-state']                = false;
+$config['poller_modules']['applications']                = false;
+$config['poller_modules']['mib']                         = false;
+$config['poller_modules']['stp']                         = false;
+$config['poller_modules']['ntp']                         = false;
+$config['poller_modules']['services']                    = false;
+$config['poller_modules']['loadbalancers']               = false;
+$config['poller_modules']['mef']                         = false;
+
+# Oxidized Config
+# Oxidized configuration
+$config['oxidized']['enabled']                  = TRUE;
+$config['oxidized']['url']                      = 'http://127.0.0.1:8888';
+$config['oxidized']['features']['versioning']   = true;
+$config['oxidized']['group_support']            = true;
+$config['oxidized']['default_group']            = 'default';
+$config['oxidized']['reload_nodes']             = true;
+$config['oxidized']['enabled']                  = TRUE;
+$config['oxidized']['url']                      = 'http://127.0.0.1:8888';
+$config['oxidized']['features']['versioning']   = true;
+$config['oxidized']['group_support']            = true;
+$config['oxidized']['default_group']            = 'default';
+$config['oxidized']['reload_nodes']             = true;
+$config['oxidized']['ignore_os'] = array('linux','windows');
+$config['oxidized']['ignore_types'] = array('server','power');
+$config['oxidized']['maps']['group']['os'][] = array('match' => 'vrp', 'group' => 'huawei');
+$config['oxidized']['maps']['group']['os'][] = array('match' => 'routeros', 'group' => 'mikrotik');
+

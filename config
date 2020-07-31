@@ -1,0 +1,57 @@
+---
+username: user		
+password: password
+model: junos
+resolve_dns: true
+interval: 3600
+use_syslog: false
+debug: false
+threads: 30
+timeout: 20
+retries: 3
+prompt: !ruby/regexp /^([\w.@-]+[#>]\s?)$/
+rest: 127.0.0.1:8888
+next_adds_job: false
+vars: {}
+groups: 
+   huawei:
+     vars:
+       enable: true
+       ssh_port: 22956
+   mikrotik:
+      vars:
+       enable: true
+       ssh_port: 58940
+models: {}
+pid: "/home/gatelecom/.config/oxidized/pid"
+crash:
+  directory: "/home/gatelecom/.config/oxidized/crashes"
+  hostnames: false
+stats:
+  history_size: 10
+input:
+  default: ssh, telnet
+  debug: false
+  ssh:
+    secure: false
+  ftp:
+    passive: true
+  utf8_encoded: true
+output:
+  default: file
+source:
+  default: http
+  debug: false
+  http:
+    url: http://nms.gabandalarga.com.br/api/v0/oxidized
+    delimiter: !ruby/regexp /^([\w.@-]+[#>]\s?)$/
+    map:
+      name: hostname
+      model: os
+      group: group
+    headers:
+      X-Auth-Token: '99992e10a37d503272dsad71fdc101e545b569'
+model_map:
+  huawei: vrp
+  mikrotik: routeros
+
